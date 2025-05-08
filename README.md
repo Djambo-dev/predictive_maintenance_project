@@ -13,9 +13,9 @@
 1. Клонируйте репозиторий:
 git clone https://github.com/Djambo-dev/FinalWorkBase.git
 2. Установите зависимости:
-pip install -r predictive_maintenance_project/requirements.txt
+pip install -r requirements.txt
 3. Запустите приложение:
-streamlit run predictive_maintenance_project/app.py
+streamlit run app.py
 ## Структура репозитория
 - `app.py`: Основной файл приложения.
 - `analysis_and_model.py`: Страница с анализом данных и моделью.
