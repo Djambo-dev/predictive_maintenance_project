@@ -25,4 +25,4 @@ streamlit run app.py
 - `README.md`: Описание проекта.
 ## Видео-демонстрация
 [Ссылка на видео](video/demo.mov) или встроенное видео ниже:
-<video src="video/demo.mp4" controls width="100%"></video>
+<video src="video/demo.mov" controls width="100%"></video>
