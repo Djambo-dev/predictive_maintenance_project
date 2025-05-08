@@ -11,7 +11,7 @@
 (https://archive.ics.uci.edu/dataset/601/predictive+maintenance+data
 ## Установка и запуск
 1. Клонируйте репозиторий:
-git clone https://github.com/Djambo-dev/FinalWorkBase.git
+git clone https://github.com/Djambo-dev/predictive_maintenance_project.git
 2. Установите зависимости:
 pip install -r requirements.txt
 3. Запустите приложение:
