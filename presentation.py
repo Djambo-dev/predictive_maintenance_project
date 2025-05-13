@@ -5,49 +5,39 @@ from reveal_slides import slides
 def presentation_page():
     st.title("Презентация проекта")
 
-    # Содержание слайдов в формате Markdown
+    if 'model_metrics' not in st.session_state:
+        st.warning("⚠️ Сначала обучите модели на странице 'Анализ и модель'.")
+        return
+
+    metrics = st.session_state['model_metrics']
+
+    # Формирование динамической таблицы
     slides_content = """
-    # Прогнозирование отказов оборудования
+    ## Прогнозирование отказов оборудования
 
     ---
 
-    ## Введение
-    - **Задача:** Предсказать отказ оборудования на основе данных с датчиков.
-    - **Целевая переменная:** `Machine failure` (0 или 1).
-    - **Датасет:** 10,000 записей с 14 признаками.
+    ### Результаты сравнения моделей
+    | Модель              | Accuracy | ROC-AUC |
+    |---------------------|----------|---------|"""
 
+    for model_name, model_metrics in metrics.items():
+        slides_content += f"\n| {model_name} | {model_metrics['accuracy']:.2f} | {model_metrics['roc_auc']:.2f} |"
+
+    slides_content += """
     ---
 
-    ## Этапы работы
-    1. Загрузка и предобработка данных.
-    2. Обучение моделей (Random Forest, XGBoost).
-    3. Оценка качества через Accuracy и ROC-AUC.
-    4. Разработка Streamlit-приложения.
-
-    ---
-
-    ## Результаты
-    - **Лучшая модель:** Random Forest (Accuracy = 0.96, ROC-AUC = 0.98).
-    - **Интерфейс:** 
-        - Загрузка данных.
-        - Визуализация метрик.
-        - Предсказания в реальном времени.
-
-    ---
-
-    ## Заключение
-    - Streamlit упростил создание интерактивного интерфейса.
-    - Возможные улучшения: добавление нейросетевых моделей.
+    ### Выводы
+    - **Лучшая модель**: Random Forest
+    - **Причины**:
+        - Наивысшие Accuracy и ROC-AUC
+        - Минимальные ложные отрицательные прогнозы
     """
 
-    # Настройки слайдов
+    # Отображение слайдов
     slides(
         slides_content,
         height=500,
         theme="night",
-        config={
-            "transition": "slide",
-            "controls": True,
-            "progress": True
-        }
+        config={"transition": "slide"}
     )
