@@ -22,7 +22,6 @@ streamlit run app.py
 - `presentation.py`: Страница с презентацией проекта.
 - `requirements.txt`: Файл с зависимостями.
 - `data`: Папка с данными.
-- `video`: Папка с видео.
 - `README.md`: Описание проекта.
 ## Видео-демонстрация
-[Ссылка на видео](link)
+[Ссылка на видео](https://disk.yandex.ru/i/-McdgtJZNQVF4g)
