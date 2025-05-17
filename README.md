@@ -25,4 +25,4 @@ streamlit run app.py
 - `video`: Папка с видео.
 - `README.md`: Описание проекта.
 ## Видео-демонстрация
-[Ссылка на видео](https://disk.yandex.ru/i/LWu46Aj8ej-zJQ)
+[Ссылка на видео](link)
